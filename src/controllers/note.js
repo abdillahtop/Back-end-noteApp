@@ -40,7 +40,7 @@ module.exports = {
     },
 
     getbyCat : (req,res) => {
-        const idCat = req.body.idCat
+        const idCat = req.params.idCat
         noteModels.getbyCat(idCat)
         .then((result) => {
             miscHelper.response(res, result, 200)
@@ -51,8 +51,8 @@ module.exports = {
     },
 
     getbyCatAsc : (req,res) => {
-        const idCat = req.body.idCat
-        noteModels.getbyCat(idCat)
+        const idCat = req.params.idCat
+        noteModels.getbyCatAsc(idCat)
         .then((result) => {
             miscHelper.response(res, result, 200)
         })

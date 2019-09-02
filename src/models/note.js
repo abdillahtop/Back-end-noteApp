@@ -38,9 +38,9 @@ module.exports = {
         })
     },
 
-    getByCat : (idCat) => {
+    getbyCat : (idCat) => {
         return new Promise((resolve, reject) => {
-            connection.query('SELECT id_note, name_note, description, updated_at, cat.name_category FROM tb_note a JOIN tb_category cat ON a.id_category = cat.id_category WHERE a.id_category = 2 ORDER BY a.id_note DESC',idCat, (err, result) => {
+            connection.query(`SELECT id_note, name_note, description, updated_at, cat.name_category FROM tb_note a JOIN tb_category cat ON a.id_category = cat.id_category WHERE a.id_category = ? ORDER BY a.id_note DESC`,idCat, (err, result) => {
                 if (!err) {
                     resolve(result)
                 } else {
@@ -50,9 +50,9 @@ module.exports = {
         })
     },
 
-    getByCatAsc : (idCat) => {
+    getbyCatAsc : (idCat) => {
         return new Promise((resolve, reject) => {
-            connection.query('SELECT id_note, name_note, description, updated_at, cat.name_category FROM tb_note a JOIN tb_category cat ON a.id_category = cat.id_category WHERE a.id_category = 2 ORDER BY a.id_note ASC',idCat, (err, result) => {
+            connection.query('SELECT id_note, name_note, description, updated_at, cat.name_category FROM tb_note a JOIN tb_category cat ON a.id_category = cat.id_category WHERE a.id_category = ? ORDER BY a.id_note ASC',idCat, (err, result) => {
                 if (!err) {
                     resolve(result)
                 } else {
