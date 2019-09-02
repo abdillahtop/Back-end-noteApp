@@ -40,7 +40,7 @@ module.exports = {
     },
     getCategory: (req, res) => {
         catModels.getCategory()
-            .then(() => {
+            .then((data) => {
                 miscHelper.response(res, data, 200)
             })
             .catch((error) => {
