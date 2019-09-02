@@ -39,6 +39,28 @@ module.exports = {
         })
     },
 
+    getbyCat : (req,res) => {
+        const idCat = req.body.idCat
+        noteModels.getbyCat(idCat)
+        .then((result) => {
+            miscHelper.response(res, result, 200)
+        })
+        .catch((error)=> {
+            console.log("error",error)
+        })
+    },
+
+    getbyCatAsc : (req,res) => {
+        const idCat = req.body.idCat
+        noteModels.getbyCat(idCat)
+        .then((result) => {
+            miscHelper.response(res, result, 200)
+        })
+        .catch((error)=> {
+            console.log("error",error)
+        })
+    },
+
     editNote: (req, res) => {
         const idNote = req.params.idNote
         const data = {
